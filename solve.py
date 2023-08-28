@@ -44,7 +44,7 @@ for answer in answers:
 
 # Rank the chosen words based on the sum of their letter frequencies for each position.
 def rank_key(word):
-    return sum(frequency_maps[pos][letter] for pos, letter in enumerate(word))
+    return min(frequency_maps[pos][letter] for pos, letter in enumerate(word))
 
 ranked_chosen_words = sorted(chosen_words, key=rank_key, reverse=True)
 
