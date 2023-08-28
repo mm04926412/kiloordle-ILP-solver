@@ -23,7 +23,7 @@ x = pulp.LpVariable.dicts("word", range(len(valid_inputs)), cat="Binary")
 prob = pulp.LpProblem("OptimizedCoverageProblem", pulp.LpMinimize)
 
 # Objective function: Minimize the number of words chosen
-prob += pulp.lpSum(x[i] for i in range(len(valid_inputs))), "Objective"
+prob += pulp.lpSum(x[i] for i in range(len(valid_inputs)))
 
 # Constraints: For each position and each letter from answers, at least one valid input should have that letter in that position
 for pos in range(5):
